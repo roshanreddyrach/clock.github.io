@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog and Digital clock</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body{
+            background-color: black;
+        }
+        .analogClockContainer{
+            margin: auto;
+            background-image: url("images/clock.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            height: 50vw;
+            width:40vw;
+            position: relative;
+    
+
+        }
+        .hoursHand,.minutesHand,.secondsHand{
+            background-color: black;
+            border-radius: 10px;
+            position: absolute;
+            transform-origin: bottom;
+
+        }
+        .hoursHand{
+            
+            height: 17%;
+            width: 1%;
+            left: 49.5%;
+            top: 35%;
+            opacity: 0.8;
+            /* display: none; */
+
+        }
+        .minutesHand{
+            height: 23%;
+            width: 0.7%;
+            left: 49.7%;
+            top: 29%;
+            opacity: 0.8;
+            /* display: none; */
+
+
+        }
+        .secondsHand{
+            height: 25%;
+            width: 0.5%;
+            left: 49.9%;
+            top: 27%;
+            opacity: 0.8;
+            
+            /* display: none; */
+
+        }
+        .digitalClockContainer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: blueviolet;
+            cursor:default  ;
+            height: 5vw;
+            width: 20vw;
+            padding: 10px;
+            margin: 10px auto;
+            font-size: 50px;
+            border-radius: 10px;
+            background: linear-gradient(135deg,#14ffe9,#ffeb3b,#ff00e0);
+            animation: animate 1.5s linear infinite;
+
+        }
+        .display{
+            position: absolute;
+            z-index: 999;
+            background-color: #1b1b1b;
+            text-align: center;
+            width: 20vw;
+            border-radius: 10px;
+        }
+        #time{
+            line-height: 85px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg,#14ffe9,#ffeb3b,#ff00e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: animate 1.5s linear infinite;
+        }
+        @keyframes animate {
+
+            100%{
+                filter:hue-rotate(360deg);
+            }
+        }
+        
+        .digitalClockContainer span{
+            height: 100%;
+            width: 100%;
+            background: inherit;
+            border-radius: 10px;
+        }
+        
+
+    </style>
+</head>
+<body>
+
+    <div class="analogClockContainer">
+        <div class="hoursHand" id="hoursHand"></div>
+        <div class="minutesHand" id="minutesHand"></div>
+        <div class="secondsHand" id="secondsHand"></div>
+    </div>
+    <div class="digitalClockContainer">
+        <div class="display">
+         <div id="time"> 00:00:00 Am</div>   
+        </div>
+    
+    </div>
+
+
+    
+    <script src="clock.js"></script>
+
+</body>
+</html>
